@@ -1,0 +1,24 @@
+{
+  "name": "devour-the-burger",
+  "version": "1.0.0",
+  "description": "A fun application to track burgers as they are logged and eaten using MySQL, Node, Express & Handlebars!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambertrand/Devour-The-Burger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambertrand/Devour-The-Burger/issues"
+  },
+  "homepage": "https://github.com/ambertrand/Devour-The-Burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
