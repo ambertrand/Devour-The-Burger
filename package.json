@@ -2,7 +2,7 @@
   "name": "devour-the-burger",
   "version": "1.0.0",
   "description": "A fun application to track burgers as they are logged and eaten using MySQL, Node, Express & Handlebars!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/ambertrand/Devour-The-Burger.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Alex Bertrand",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ambertrand/Devour-The-Burger/issues"
   },
