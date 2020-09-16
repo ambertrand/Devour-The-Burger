@@ -1,7 +1,7 @@
 const orm = require("../config/orm");
 
 const burger = {
-    SelectAll: function() {
+      selectAll: function() {
         return orm.selectAll("burgers");
       },
       // The variables cols and vals are arrays.
