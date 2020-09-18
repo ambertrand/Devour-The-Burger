@@ -1,0 +1,10 @@
+* {
+    max-width: 100%;
+}
+
+body {
+    background-image: url(./img/burger-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

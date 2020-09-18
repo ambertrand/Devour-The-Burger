@@ -1,38 +1,49 @@
-<h1>Cats!</h1>
-
-<h2>Cats that are not sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Cat</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+<header>
+  <div class="title m-3">
+    <h1 class="text-center">Devour The Burger</h1>
+    <p class="text-center">Devour Your Desired Burger or Craft Your Own to Devour</p>
   </div>
+</header>
 
-  <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+<div class="container-main">
+  <div class="row">
+    <div class="burger-cards d-flex">
+
+      <div class="card justify-content-center m-3 col-sm-12 col-md-4">
+        <div class="card-body">
+          <h2 class="card-title">Burgers to be Devoured</h2>
+          <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burger-block devoured=false}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="card form-card justify-content-center m-3 p-3 col-sm-12 col-md-4">
+        <form class="form-group burger-input">
+          <label for="addingNewBurger">Create Your Own Burger</label>
+          <input class="form-control">
+          <button class="btn btn-outline-warning align-item-center" type="submit">Add Your Burger</button>
+        </form>
+      </div>
+
+      <div class="card justify-content-center m-3 col-sm-12 col-md-4">
+        <div class="card-body">
+          <h2 class="card-title">Devoured Burgers</h2>
+          <ul>
+            {{#each burgers}}
+            {{#if burgers}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <button type="submit">Add Cat</button>
-</form>
+</div>
