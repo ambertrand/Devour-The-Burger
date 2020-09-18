@@ -9,6 +9,17 @@ router.get("/", async function(req, res) {
   res.render("index", hbsObject);
 });
 
+router.get("/api/burgers", async function(req, res) {
+  try {
+    const result = await burger.selectAll();
+    res.json({burgers: result});
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
 router.post("/api/burgers", async function(req, res) {
   try {
     const result = await burger.insertOne(
@@ -34,7 +45,7 @@ router.put("/api/burgers/:id", async function(req, res) {
   console.log("condition", condition);
 
   try {
-    const result = await burger.update({ devoured: req.body.devoured }, condition);
+    const result = await burger.updateOne({ devoured: req.body.devoured }, condition);
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -52,7 +63,7 @@ router.delete("/api/burgers/:id", async function(req, res) {
   const condition = "id = " + req.params.id;
 
   try {
-    const result = await burger.delete(condition)
+    const result = await burger.deleteOne(condition)
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

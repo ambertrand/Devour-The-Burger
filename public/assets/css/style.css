@@ -1,16 +1,19 @@
 * {
     max-width: 100%;
-    font-family: 'Permanent Marker', cursive;
 }
 
 body {
     background-image: url(./img/burger-bg.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;  
 }
 
 h1 {
     font-size: xx-large;
+}
+
+.container-fluid {
+    font-family: 'Permanent Marker', cursive;
 }
 
 .burgerBtn {
