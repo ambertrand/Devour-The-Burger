@@ -8,3 +8,14 @@ body {
     background-size: cover;
 }
 
+div.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.burgerBtn {
+    display: flex;
+    align-items: center;
+}
