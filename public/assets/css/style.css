@@ -1,5 +1,6 @@
 * {
     max-width: 100%;
+    font-family: 'Permanent Marker', cursive;
 }
 
 body {
@@ -8,14 +9,11 @@ body {
     background-size: cover;
 }
 
-div.card {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
+h1 {
+    font-size: xx-large;
 }
 
 .burgerBtn {
     display: flex;
-    align-items: center;
+    align-content: center;
 }
