@@ -23,10 +23,7 @@ router.get("/api/burgers", async function(req, res) {
 router.post("/api/burgers", async function(req, res) {
   try {
     const result = await burger.insertOne(req.body.burger_name);
-    
-    // Send back the ID of the new quote
     res.json({ id: result.id });
-  
   }
   catch (err) {
     console.error(err);
@@ -56,7 +53,6 @@ router.put("/api/burgers/:id", async function(req, res) {
 
 router.delete("/api/burgers/:id", async function(req, res) {
   const condition = "id = " + req.params.id;
-  // console.log(req.params.id);
   try {
     const result = await burger.deleteOne(condition)
     if (result.affectedRows == 0) {

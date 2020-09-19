@@ -17,11 +17,8 @@ class ORM {
         });
       })
     };
+
     // Helper function for SQL syntax.
-    // Let's say we want to pass 3 values into the mySQL query.
-    // In order to write the query, we need 3 question marks.
-    // The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
-    // ["?", "?", "?"].toString() => "?,?,?";
     printQuestionMarks(num) {
       const arr = [];
   
@@ -45,7 +42,6 @@ class ORM {
           if (typeof value === "string" && value.indexOf(" ") >= 0) {
             value = "'" + value + "'";
           }
-          // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
           // e.g. {sleepy: true} => ["sleepy=true"]
           arr.push(key + "=" + value);
         }
@@ -89,7 +85,6 @@ class ORM {
       queryString += ' WHERE ';
       queryString += condition += ";";
       
-      // console.log(condition)
       return this.query(queryString);
     }
   
