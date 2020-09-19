@@ -9,47 +9,45 @@
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="burger-cards d-flex my-auto">
+    <div class="burger-cards d-flex">
 
-      <div class="card m-3 col-sm-12 col-md-6">
+      <div class="card col-sm-12 col-md-6 mr-3">
         <div class="card-body">
-          <h2 class="card-title text-center">Burgers to be Devoured</h2>
-          <ul>
+          <h2 class="card-header text-center m-2">Burgers to be Devoured</h2>
             {{#each burgers}}
             {{#unless devoured}}
               <div class="row">
-                <div class="col-4">{{burger_name}}</div>
+                <div class="col-6 burgerName p-2">{{burger_name}}</div>
                 <div class="col-4">
                   {{#unless devoured}}
-                  <button class="btn btn-outline-success devour-burger" data-id="{{id}}"
+                  <button class="btn btn-outline-success devour-burger m-1" data-id="{{id}}"
                     data-devoured="{{devoured}}">Devour!</button>
                   {{/unless}}
                 </div>
-                <div class="col-4">
-                  <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Yuck Trash It!</button>
+                <div class="col-2">
+                  <button class="btn btn-outline-danger delete-btn mt-1" data-id="{{this.id}}"><i
+                  class="fa fa-trash mr-4"></i></button>
                 </div>
               </div>
             {{/unless}}
             {{/each}}
-          </ul>
         </div>
       </div>
 
-      <div class="card m-3 col-sm-12 col-md-6">
+      <div class="card col-sm-12 col-md-6 ml-3">
         <div class="card-body">
-          <h2 class="card-title text-center">Devoured Burgers</h2>
-          <ul>
+          <h2 class="card-header text-center m-2">Devoured Burgers</h2>
             {{#each burgers}}
             {{#if devoured}}
               <div class="row">
-                <div class="col-8">{{burger_name}}</div>
+                <div class="col-8 burgerName">{{burger_name}}</div>
                 <div class="col-4">
-                  <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Trash It!</button>
+                  <button class="btn btn-outline-danger delete-btn m-1" data-id="{{this.id}}"><i
+                class="fa fa-trash m-2"></i></button>
                 </div>
               </div>
             {{/if}}
             {{/each}}
-          </ul>
         </div>
       </div>
 

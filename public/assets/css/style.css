@@ -1,5 +1,6 @@
 * {
     max-width: 100%;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,4 +20,8 @@ h1 {
 .burgerBtn {
     display: flex;
     align-content: center;
+}
+
+.burgerName {
+    margin-bottom: 2px;
 }
