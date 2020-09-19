@@ -56,27 +56,27 @@ class ORM {
     }
   
     // Object for all our SQL statement functions.
-    selectAll(tableInput) {
+    selectAll() {
       return this.query("SELECT * FROM burgers;");
     }
   
-    insertOne(table, cols, vals) {
-      let queryString = "INSERT INTO " + table;
+    insertOne(vals) {
+      let queryString = "INSERT INTO burgers";
   
       queryString += " (";
-      queryString += cols.toString();
+      queryString += "burger_name";
       queryString += ") ";
       queryString += "VALUES (";
-      queryString += this.printQuestionMarks(vals.length);
+      queryString += `"${vals}"`;
       queryString += ");";
-  
+      console.log("This is query string");
       console.log(queryString);
   
       return this.query(queryString, vals);
     }
     // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne(table, objColVals, condition) {
-      let queryString = "UPDATE " + table;
+    updateOne(objColVals, condition) {
+      let queryString = "UPDATE burgers";
   
       queryString += " SET ";
       queryString += this.objToSql(objColVals);
@@ -87,8 +87,8 @@ class ORM {
       return this.query(queryString);
     }
   
-    deleteOne(table, condition) {
-      let queryString = "DELETE FROM " + table;
+    deleteOne(condition) {
+      let queryString = "DELETE FROM burgers";
       queryString += " WHERE ";
       queryString += condition;
   

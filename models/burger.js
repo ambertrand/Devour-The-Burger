@@ -5,8 +5,8 @@ const burger = {
         return orm.selectAll("burgers");
       },
       // The variables cols and vals are arrays.
-      insertOne: function(cols, vals) {
-        return orm.insertOne("burgers", cols, vals);
+      insertOne: function(vals) {
+        return orm.insertOne(vals);
       },
       updateOne: function(objColVals, condition) {
         return orm.updateOne("burgers", objColVals, condition);

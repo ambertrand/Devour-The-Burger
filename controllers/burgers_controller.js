@@ -22,16 +22,19 @@ router.get("/api/burgers", async function(req, res) {
 
 router.post("/api/burgers", async function(req, res) {
   try {
+    console.log(req.body.burger_name);
     const result = await burger.insertOne(
-      [
-        "burger_name", "devoured"
-      ],
-      [
-        req.body.burger_name, req.body.devoured
-      ]
+      // [
+      //   "burger_name"
+      // ],
+      
+       req.body.burger_name
+      
+      
     );
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });;
+    res.json({ id: result.id });
+  
   }
   catch (err) {
     console.error(err);
