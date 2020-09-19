@@ -12,7 +12,7 @@ const burger = {
         return dbManager.updateOne("burgers", objColVals, condition);
       },
       deleteOne: function(condition) {
-        return dbManager.deleteOne("burgers", condition);
+        return dbManager.deleteOne(condition);
       }
     };
     

@@ -81,7 +81,6 @@ class ORM {
       queryString += ' WHERE ';
       queryString += condition + ";";
   
-      console.log(queryString);
       return this.query(queryString);
     }
   
