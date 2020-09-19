@@ -12,7 +12,7 @@ router.get("/", async function(req, res) {
 router.get("/api/burgers", async function(req, res) {
   try {
     const result = await burger.selectAll();
-    res.json({burgers: result});
+    res.json({ burgers: result });
   }
   catch (err) {
     console.log(err);
