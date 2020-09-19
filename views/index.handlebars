@@ -17,7 +17,20 @@
           <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            {{> burgers/burger-block}}
+            <li>
+              <div class="row">
+                <div class="col-8">{{burger_name}}</div>
+                <div class="col-2">
+                  {{#unless devoured}}
+                  <button class="btn btn-outline-success devour-burger" data-id="{{id}}"
+                    data-devoured="{{devoured}}">Devour!</button>
+                  {{/unless}}
+                </div>
+                <div class="col-2">
+                  <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Yuck Trash It!</button>
+                </div>
+              </div>
+            </li>
             {{/unless}}
             {{/each}}
           </ul>
@@ -29,8 +42,15 @@
           <h2 class="card-title text-center">Devoured Burgers</h2>
           <ul>
             {{#each burgers}}
-            {{#if burgers}}
-            {{> burgers/burger-block}}
+            {{#if devoured}}
+            <li>
+              <div class="row">
+                <div class="col-8">{{burger_name}}</div>
+                <div class="col-2">
+                  <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Yuck Trash It!</button>
+                </div>
+              </div>
+            </li>
             {{/if}}
             {{/each}}
           </ul>
@@ -45,10 +65,26 @@
       <form class="form-group burger-input">
         <p for="addingNewBurger" class="m-2"><strong>Create A Burger</strong></p>
         <textarea class="form-control" rows="2" cols="10"></textarea>
-        <button class="btn btn-outline-warning burgerBtn m-2" type="submit">Add Your Burger</button>
+        <button class="btn btn-outline-warning burgerBtn m-2" id="burger" type="submit">Add Your Burger</button>
       </form>
     </div>
   </div>
 
 
 </div>
+
+
+<li>
+  <div class="row">
+    <div class="col-8">{{burger_name}}</div>
+    <div class="col-2">
+      {{#unless devoured}}
+      <button class="btn btn-outline-success devour-burger" data-id="{{id}}"
+        data-devoured="{{devoured}}">Devour!</button>
+      {{/unless}}
+    </div>
+    <div class="col-2">
+      <button class="btn btn-outline-danger delete-btn" data-id="{{this.id}}">Yuck Trash It!</button>
+    </div>
+  </div>
+</li>

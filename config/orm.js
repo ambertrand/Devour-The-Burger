@@ -57,7 +57,7 @@ class ORM {
   
     // Object for all our SQL statement functions.
     selectAll(tableInput) {
-      return this.query("SELECT * FROM " + tableInput + ";");
+      return this.query("SELECT * FROM burgers;");
     }
   
     insertOne(table, cols, vals) {

@@ -11,7 +11,7 @@ router.get("/", async function(req, res) {
 
 router.get("/api/burgers", async function(req, res) {
   try {
-    const result = await burger.selectAll();
+    const result = await burger.selectAll(burgers);
     res.json({ burgers: result });
   }
   catch (err) {
