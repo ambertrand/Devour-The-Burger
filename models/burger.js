@@ -9,7 +9,7 @@ const burger = {
         return dbManager.insertOne(vals);
       },
       updateOne: function(objColVals, condition) {
-        return dbManager.updateOne("burgers", objColVals, condition);
+        return dbManager.updateOne(objColVals, condition);
       },
       deleteOne: function(condition) {
         return dbManager.deleteOne(condition);

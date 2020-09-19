@@ -69,7 +69,7 @@ class ORM {
       return this.query(queryString, vals);
     }
     // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne(objColVals, properties, condition) {
+    updateOne(properties, condition) {
       let queryString = "UPDATE burgers";
   
       queryString += ' SET ';
