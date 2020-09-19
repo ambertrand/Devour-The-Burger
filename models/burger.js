@@ -1,18 +1,18 @@
-const orm = require("../config/orm");
+const dbManager = require("../config/orm");
 
 const burger = {
       selectAll: function() {
-        return orm.selectAll("burgers");
+        return dbManager.selectAll("burgers");
       },
       // The variables cols and vals are arrays.
       insertOne: function(vals) {
-        return orm.insertOne(vals);
+        return dbManager.insertOne(vals);
       },
       updateOne: function(objColVals, condition) {
-        return orm.updateOne("burgers", objColVals, condition);
+        return dbManager.updateOne("burgers", objColVals, condition);
       },
       deleteOne: function(condition) {
-        return orm.deleteOne("burgers", condition);
+        return dbManager.deleteOne("burgers", condition);
       }
     };
     

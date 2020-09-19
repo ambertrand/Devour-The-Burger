@@ -22,7 +22,6 @@ router.get("/api/burgers", async function(req, res) {
 
 router.post("/api/burgers", async function(req, res) {
   try {
-    console.log(req.body.burger_name);
     const result = await burger.insertOne(req.body.burger_name);
     
     // Send back the ID of the new quote
@@ -41,7 +40,7 @@ router.put("/api/burgers/:id", async function(req, res) {
   console.log("condition", condition);
 
   try {
-    const result = await burger.updateOne({ devoured: req.body.devoured }, condition);
+    const result = await burger.updateOne({ devoured: req.body.devoured }, condition, condition);
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -57,7 +56,7 @@ router.put("/api/burgers/:id", async function(req, res) {
 
 router.delete("/api/burgers/:id", async function(req, res) {
   const condition = "id = " + req.params.id;
-
+  // console.log(req.params.id);
   try {
     const result = await burger.deleteOne(condition)
     if (result.affectedRows == 0) {

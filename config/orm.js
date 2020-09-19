@@ -1,4 +1,4 @@
-const connection = require("../config/connection");
+const connection = require("./connection");
 
 class ORM {
     connection;
@@ -69,29 +69,28 @@ class ORM {
       queryString += "VALUES (";
       queryString += `"${vals}"`;
       queryString += ");";
-      console.log("This is query string");
-      console.log(queryString);
   
       return this.query(queryString, vals);
     }
     // An example of objColVals would be {name: panther, sleepy: true}
-    updateOne(objColVals, condition) {
+    updateOne(objColVals, properties, condition) {
       let queryString = "UPDATE burgers";
   
-      queryString += " SET ";
-      queryString += this.objToSql(objColVals);
-      queryString += " WHERE ";
-      queryString += condition;
+      queryString += ' SET ';
+      queryString += this.objToSql(properties);
+      queryString += ' WHERE ';
+      queryString += condition + ";";
   
       console.log(queryString);
       return this.query(queryString);
     }
   
     deleteOne(condition) {
-      let queryString = "DELETE FROM burgers";
-      queryString += " WHERE ";
-      queryString += condition;
-  
+      let queryString = 'DELETE FROM burgers';
+      queryString += ' WHERE ';
+      queryString += condition += ";";
+      
+      // console.log(condition)
       return this.query(queryString);
     }
   
